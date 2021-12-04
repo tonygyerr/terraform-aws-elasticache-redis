@@ -102,7 +102,7 @@ variable "subnet_ids" {
 
 variable "replication_group_description" {
   type        = string
-  description = "Descriptionof replication group"
+  description = "Description of replication group"
 }
 
 variable "elasticache_subnet_group_name" {
@@ -287,12 +287,6 @@ variable "cluster_mode_num_node_groups" {
   type        = number
   description = "Number of node groups (shards) for this Redis replication group. Changing this number will trigger an online resizing operation before other settings modifications"
   default     = 0
-}
-
-variable "replication_group_description" {
-  description = "Description of the Replication Group"
-  type        = string
-  default     = null
 }
 
 variable "number_of_subnets" {
