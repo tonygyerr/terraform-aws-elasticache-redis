@@ -1,6 +1,6 @@
 resource "aws_security_group" "default" {
   count  = var.enabled && var.use_existing_security_groups == false ? 1 : 0
-  vpc_id = var.vpc_config.vpc_id
+  vpc_id = var.vpc_id
   name   = "${var.app_name}-elasticache-sg"
   tags   = var.tags
 }
