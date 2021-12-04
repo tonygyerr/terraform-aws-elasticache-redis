@@ -17,13 +17,3 @@ output "endpoint" {
   value       = var.cluster_mode_enabled ? join("", aws_elasticache_replication_group.default.*.configuration_endpoint_address) : join("", aws_elasticache_replication_group.default.*.primary_endpoint_address)
   description = "Redis primary endpoint"
 }
-
-# output "host" {
-#   value       = module.dns.hostname
-#   description = "Redis hostname"
-# }
-
-output "subnet_ids" {
-  value       = join("", aws_elasticache_subnet_group.default.*.subnet_ids)
-  description = "Redis Subnet ids"
-}
