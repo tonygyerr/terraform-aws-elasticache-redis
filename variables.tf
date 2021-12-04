@@ -100,10 +100,9 @@ variable "subnet_ids" {
   default     = []
 }
 
-variable "private_db_subnets" {
-  type        = list(string)
-  description = "Subnet IDs"
-  default     = []
+variable "replication_group_description" {
+  type        = string
+  description = "Descriptionof replication group"
 }
 
 variable "elasticache_subnet_group_name" {

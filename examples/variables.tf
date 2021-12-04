@@ -32,6 +32,17 @@ variable "subnet_ids" {
   default     = []
 }
 
+variable "subnet_ids" {
+  type        = list(string)
+  description = "Subnet IDs"
+  default     = []
+}
+
+variable "replication_group_description" {
+  type        = string
+  description = "Descriptionof replication group"
+}
+
 variable "availability_zones" {
   type        = list(string)
   description = "Availability zone IDs"
