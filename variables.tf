@@ -277,3 +277,9 @@ variable "cluster_mode_num_node_groups" {
   description = "Number of node groups (shards) for this Redis replication group. Changing this number will trigger an online resizing operation before other settings modifications"
   default     = 0
 }
+
+variable "replication_group_description" {
+  description = "Description of the Replication Group"
+  type        = string
+  default     = null
+}

@@ -22,8 +22,8 @@ resource "aws_elasticache_replication_group" "default" {
   count = var.enabled ? 1 : 0
 
   auth_token                    = var.transit_encryption_enabled ? var.auth_token : null
-  replication_group_id          = var.replication_group_id == "" ? module.label.id : var.replication_group_id
-  replication_group_description = module.label.id
+  replication_group_id          = var.replication_group_id #== "" ? module.label.id : var.replication_group_id
+  replication_group_description = var.replication_group_description
   node_type                     = var.instance_type
   number_cache_clusters         = var.cluster_mode_enabled ? (1 + var.cluster_mode_replicas_per_node_group) * var.cluster_mode_num_node_groups : var.cluster_size
   port                          = var.port
@@ -41,7 +41,7 @@ resource "aws_elasticache_replication_group" "default" {
   snapshot_retention_limit      = var.snapshot_retention_limit
   apply_immediately             = var.apply_immediately
 
-  tags = module.label.tags
+  tags = var.tags
 
   dynamic "cluster_mode" {
     for_each = var.cluster_mode_enabled ? ["true"] : []
