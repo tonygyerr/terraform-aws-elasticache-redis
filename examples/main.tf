@@ -32,6 +32,7 @@ module "redis" {
   subnets                    = module.redis.subnet_ids #[var.vpc_config.private_db_subnets] #module.vpc.private_db_subnets #module.vpc.private_db_subnets
   cluster_size               = var.cluster_size
   instance_type              = var.instance_type
+  number_of_subnets          = var.number_of_subnets
   apply_immediately          = true
   automatic_failover_enabled = var.automatic_failover_enabled
   engine_version             = var.engine_version
