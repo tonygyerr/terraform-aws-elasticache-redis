@@ -1,7 +1,7 @@
 resource "aws_elasticache_subnet_group" "default" {
   count      = var.enabled && var.elasticache_subnet_group_name == "" && length(var.number_of_subnets) > 0 ? 1 : 0
   name       = "${var.app_name}-elasticache-subnet-group" #module.label.id
-  subnet_ids = [var.subnet_ids]
+  subnet_ids = "${var.private_db_subnet_ids}"
 }
 
 resource "aws_elasticache_parameter_group" "default" {

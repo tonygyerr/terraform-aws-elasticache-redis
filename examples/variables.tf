@@ -20,21 +20,9 @@ variable "app_name" {
   default = ""
 }
 
-variable "subnets" {
-  type        = list(string)
-  description = "Subnet IDs"
-  default     = []
-}
-
-variable "subnet_ids" {
-  type        = list(string)
-  description = "Subnet IDs"
-  default     = []
-}
-
-variable "subnet_ids" {
-  type        = list(string)
-  description = "Subnet IDs"
+variable "private_db_subnet_ids" {
+  type        = list(any)
+  description = "List of Private Database Subnet ID's" 
   default     = []
 }
 

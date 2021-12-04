@@ -94,12 +94,11 @@ variable "subnets" {
   default     = []
 }
 
-variable "subnet_ids" {
-  type        = list(string)
-  description = "Subnet IDs"
+variable "private_db_subnet_ids" {
+  type        = list(any)
+  description = "List of Private Database Subnet ID's" 
   default     = []
 }
-
 variable "replication_group_description" {
   type        = string
   description = "Description of replication group"
