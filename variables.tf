@@ -10,6 +10,11 @@ variable "vpc_id" {
   default     = ""
 }
 
+variable "app_name" {
+  type = string
+  default = ""
+}
+
 variable "label_id" {
   type    = string
   default = ""

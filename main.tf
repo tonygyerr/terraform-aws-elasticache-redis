@@ -1,13 +1,13 @@
-module "label" {
-  source      = "../../management/label/"
-  namespace   = var.namespace
-  stage       = var.stage
-  name        = var.name
-  attributes  = var.attributes
-  tags        = var.tags
-  application = var.application
-  environment = var.environment
-}
+# module "label" {
+#   source      = "../../management/label/"
+#   namespace   = var.namespace
+#   stage       = var.stage
+#   name        = var.name
+#   attributes  = var.attributes
+#   tags        = var.tags
+#   application = var.application
+#   environment = var.environment
+# }
 
 # module "cache_cpu" {
 #   source                          = "../../management/cloudwatch/"

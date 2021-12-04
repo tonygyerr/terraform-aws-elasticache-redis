@@ -1,8 +1,8 @@
 resource "aws_security_group" "default" {
   count  = var.enabled && var.use_existing_security_groups == false ? 1 : 0
   vpc_id = var.vpc_config.vpc_id
-  name   = module.label.id
-  tags   = module.label.tags 
+  name   = "${var.app_name}-elasticache-sg"
+  tags   = var.tags
 }
 
 resource "aws_security_group_rule" "egress" {

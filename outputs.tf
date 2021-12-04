@@ -3,9 +3,6 @@ output "id" {
   description = "Redis cluster ID"
 }
 
-output "label_id" {
-  value = "${module.label.id}"
-}
 output "security_group_id" {
   value       = join("", aws_security_group.default.*.id)
   description = "Security group ID"

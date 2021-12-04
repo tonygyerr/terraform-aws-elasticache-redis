@@ -15,6 +15,11 @@ variable "vpc_id" {
   default     = ""
 }
 
+variable "app_name" {
+  type = string
+  default = ""
+}
+
 variable "subnets" {
   type        = list(string)
   description = "Subnet IDs"
