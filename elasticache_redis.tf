@@ -22,7 +22,7 @@ resource "aws_elasticache_replication_group" "default" {
   count = var.enabled ? 1 : 0
 
   auth_token                    = var.transit_encryption_enabled ? var.auth_token : null
-  replication_group_id          = var.replication_group_id #== "" ? module.label.id : var.replication_group_id
+  replication_group_id          = "${var.app_name}-replication-group"
   replication_group_description = var.replication_group_description
   node_type                     = var.instance_type
   number_cache_clusters         = var.cluster_mode_enabled ? (1 + var.cluster_mode_replicas_per_node_group) * var.cluster_mode_num_node_groups : var.cluster_size
