@@ -32,3 +32,8 @@ output "cluster_endpoint" {
 #   value       = module.redis.host
 #   description = "Redis hostname"
 # }
+
+output "subnet_ids" {
+  value       = module.redis.subnet_ids
+  description = "Redis Subnet ids"
+}
