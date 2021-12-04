@@ -94,6 +94,18 @@ variable "subnets" {
   default     = []
 }
 
+variable "subnet_ids" {
+  type        = list(string)
+  description = "Subnet IDs"
+  default     = []
+}
+
+variable "private_db_subnets" {
+  type        = list(string)
+  description = "Subnet IDs"
+  default     = []
+}
+
 variable "elasticache_subnet_group_name" {
   type        = string
   description = "Subnet group name for the ElastiCache instance"

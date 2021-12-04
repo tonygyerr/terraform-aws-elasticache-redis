@@ -26,6 +26,18 @@ variable "subnets" {
   default     = []
 }
 
+variable "subnet_ids" {
+  type        = list(string)
+  description = "Subnet IDs"
+  default     = []
+}
+
+variable "private_db_subnets" {
+  type        = list(string)
+  description = "Subnet IDs"
+  default     = []
+}
+
 variable "availability_zones" {
   type        = list(string)
   description = "Availability zone IDs"

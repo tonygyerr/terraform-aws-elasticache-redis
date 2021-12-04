@@ -29,10 +29,11 @@ module "redis" {
   zone_id                    = var.zone_id
   vpc_id                     = var.vpc_config.vpc_id               #module.vpc.vpc_id
   allowed_security_groups    = [module.redis.security_group_id] #[var.vpc_config.security_group_ids]   #[module.vpc.api_security_group_id]
-  subnets                    = module.redis.subnet_ids #[var.vpc_config.private_db_subnets] #module.vpc.private_db_subnets #module.vpc.private_db_subnets
+  subnet_ids                 = var.subnet_ids #[var.vpc_config.private_db_subnets] #module.vpc.private_db_subnets #module.vpc.private_db_subnets
   cluster_size               = var.cluster_size
   instance_type              = var.instance_type
   number_of_subnets          = var.number_of_subnets
+  private_db_subnets         = var.private_db_subnets
   apply_immediately          = true
   automatic_failover_enabled = var.automatic_failover_enabled
   engine_version             = var.engine_version
