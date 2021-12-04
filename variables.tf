@@ -283,3 +283,9 @@ variable "replication_group_description" {
   type        = string
   default     = null
 }
+
+variable "number_of_subnets" {
+  description = "The number of subnets needed"
+  type        = string
+  default     = null
+}

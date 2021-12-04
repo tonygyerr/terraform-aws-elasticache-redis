@@ -99,3 +99,9 @@ variable "tags" {
   description = "Additional tags (_e.g._ map(\"BusinessUnit\",\"ABC\")"
   default     = {}
 }
+
+variable "number_of_subnets" {
+  description = "The number of subnets needed"
+  type        = string
+  default     = null
+}
