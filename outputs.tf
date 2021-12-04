@@ -22,3 +22,8 @@ output "endpoint" {
 #   value       = module.dns.hostname
 #   description = "Redis hostname"
 # }
+
+output "subnet_ids" {
+  value       = join("", aws_elasticache_subnet_group.default.*.subnet_ids)
+  description = "Redis Subnet ids"
+}
